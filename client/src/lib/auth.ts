@@ -52,6 +52,7 @@ export const {
       },
     }),
   ],
+  redirectProxyUrl: "https://blogger-logger-next-js.vercel.app/api/auth",
   //@ts-ignore
   callbacks: {
     async signIn({ user, account, profile }) {
