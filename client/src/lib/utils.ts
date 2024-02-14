@@ -24,3 +24,5 @@ export const DBConnection = async () => {
   //   throw new Error(error.message);
   // }
 };
+
+export { renderToString } from "react-dom/server";

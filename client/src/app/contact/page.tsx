@@ -45,8 +45,8 @@ export default function Contact() {
           <textarea
             name=""
             id=""
-            cols="30"
-            rows="10"
+            cols={30}
+            rows={30}
             placeholder="Message"
           ></textarea>
           <button>Send</button>

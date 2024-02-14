@@ -12,7 +12,7 @@ export default function ServerActionTest() {
   };
   return (
     <div>
-      <form action={createPostAction}>
+      {/* <form action={createPostAction}> 
         <input type="text" placeholder="title" name="title" />
         <input type="text" placeholder="body" name="body" />
         <input type="text" placeholder="image" name="image" />
@@ -23,7 +23,7 @@ export default function ServerActionTest() {
       <form action={deletePostAction}>
         <input type="text" placeholder="postId" name="postId" />
         <button>Delete</button>
-      </form>
+      </form> */}
     </div>
   );
 }

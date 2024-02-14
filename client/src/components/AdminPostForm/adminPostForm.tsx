@@ -14,7 +14,7 @@ const AdminPostForm = ({ userId }: any) => {
       <input type="text" name="title" placeholder="Title" />
       <input type="text" name="slug" placeholder="Slug" />
       <input type="text" name="img" placeholder="Image" />
-      <textarea type="text" name="body" placeholder="Description" rows={10} />
+      <textarea name="body" placeholder="Description" rows={10} />
       <button>Add</button>
       {state?.error}
     </form>

@@ -7,6 +7,7 @@ import Link from "next/link";
 import ThemeSwitch from "./ThemeSwitch";
 import { handleGithubLogout } from "@/lib/actions";
 import { auth } from "@/lib/auth";
+import { renderToString } from "@/lib/utils";
 
 export default async function NavBar() {
   // const isAdmin = true;
@@ -28,23 +29,25 @@ export default async function NavBar() {
       <div className={`hidden md:flex ${styles.subcontainer}`}>
         <ThemeSwitch />
         {session?.user ? (
+          // @ts-ignore
           session?.user?.isAdmin ? (
             <div className="flex items-center gap-3">
               <NavLinks
                 item={{
-                  title: (
-                    <>
-                      <div className={styles.nav_user}>
-                        <Image
-                          src="/admin.png"
-                          alt="user-image"
-                          width={24}
-                          height={24}
-                        />
-                        <span>{session?.user?.name || "Admin"}</span>
-                      </div>
-                    </>
-                  ),
+                  // title: renderToString(
+                  //   <>
+                  //     <div className={styles.nav_user}>
+                  //       <Image
+                  //         src="/admin.png"
+                  //         alt="user-image"
+                  //         width={24}
+                  //         height={24}
+                  //       />
+                  //       <span>{session?.user?.name || "Admin"}</span>
+                  //     </div>
+                  //   </>
+                  // ),
+                  title: session?.user?.name || "Admin",
                   pathname: "/admin",
                 }}
                 key="Admin"
@@ -88,6 +91,7 @@ export default async function NavBar() {
         )}
       </div>
       <MobileLinks
+        // @ts-ignore
         isAdmin={session?.user?.isAdmin}
         session={session}
         username={session?.user?.name || ""}

@@ -1,12 +1,13 @@
 "use client";
 
-import { ReactElement, useState } from "react";
+import { ReactElement, useState, ReactNode } from "react";
 import NavLinks from "../Links/Navlinks/navlinks";
 import { links } from "../Links/links";
 import styles from "./mobilelinks.module.css";
 import Image from "next/image";
 import ThemeSwitch from "../ThemeSwitch";
 import { handleGithubLogout } from "@/lib/actions";
+import { renderToString } from "react-dom/server";
 
 type MobileLinkProps = {
   isAdmin: boolean;
@@ -42,19 +43,20 @@ export default function MobileLinks({
               <div className="flex flex-col items-center justify-center">
                 <NavLinks
                   item={{
-                    title: (
-                      <>
-                        <div className={styles.nav_user}>
-                          <Image
-                            src="/admin.png"
-                            alt="user-image"
-                            width={24}
-                            height={24}
-                          />
-                          <span>{session?.user?.name || "Admin"}</span>
-                        </div>
-                      </>
-                    ),
+                    // title: renderToString(
+                    //   <>
+                    //     <div className={styles.nav_user}>
+                    //       <Image
+                    //         src="/admin.png"
+                    //         alt="user-image"
+                    //         width={24}
+                    //         height={24}
+                    //       />
+                    //       <span>{session?.user?.name || "Admin"}</span>
+                    //     </div>
+                    //   </>
+                    // ),
+                    title: session?.user?.name || "Admin",
                     pathname: "/admin",
                   }}
                   key="Admin"

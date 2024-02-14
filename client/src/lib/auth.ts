@@ -6,7 +6,7 @@ import { Users } from "./models";
 import bcrypt from "bcrypt";
 import { authConfig } from "./auth.config";
 
-const login = async (credentials: Partial<Record<string, unknown>>) => {
+const login = async (credentials: any) => {
   try {
     DBConnection();
     const user = await Users.findOne({ username: credentials.username });
@@ -51,6 +51,7 @@ export const {
       },
     }),
   ],
+  // @ts-ignore
   callbacks: {
     async signIn({ user, account, profile }) {
       if (account?.provider == "github") {
