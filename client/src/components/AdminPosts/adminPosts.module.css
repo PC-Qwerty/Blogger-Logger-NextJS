@@ -1,0 +1,35 @@
+.post {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.postButton {
+  padding: 5px 10px;
+  background-color: rgba(220, 20, 60, 0.593);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.userimage {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.container {
+  background-color: rgb(246, 249, 245);
+  padding: 1.5rem;
+  border-radius: 20px;
+}

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 1.45rem;
+}
+
+.wrapper {
+  width: 500px;
+  background-color: rgb(237, 238, 238);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+  border-radius: 5px;
+}
+
+.github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #e3c3c3;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}

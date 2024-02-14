@@ -1,0 +1,10 @@
+.navlink {
+  letter-spacing: 1px;
+  padding: 0 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.active {
+  background-color: #c1c1c1;
+}

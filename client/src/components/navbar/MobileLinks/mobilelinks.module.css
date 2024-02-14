@@ -1,0 +1,38 @@
+.mobilelinks {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 40%;
+  height: auto;
+  background-color: rgb(194, 194, 194);
+  border-radius: 0 0 10px 10px;
+}
+
+.subcontainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.links_div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nav_user {
+  display: flex;
+  gap: 4px;
+}
+/* .bottom_info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} */
+
+/* .container {
+  
+} */
