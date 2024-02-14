@@ -52,6 +52,7 @@ export const {
       },
     }),
   ],
+  //@ts-ignore
   callbacks: {
     async signIn({ user, account, profile }) {
       if (account?.provider == "github") {

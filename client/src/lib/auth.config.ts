@@ -2,20 +2,20 @@ import { Session } from "next-auth";
 import { NextRequest } from "next/server";
 
 // type authConfigProps = { request: NextRequest; auth: Session | null };
-type authConfigProps = { request: any; auth: any };
+// type authConfigProps = { request: any; auth: any };
 
-type jwtProps = {
-  token: any;
-  //   token: {
-  //     id: string;
-  //     isAdmin: boolean;
-  //   };
-  user: any;
-};
-type sessionProps = {
-  session: any;
-  token: any;
-};
+// type jwtProps = {
+//   token: any;
+//   //   token: {
+//   //     id: string;
+//   //     isAdmin: boolean;
+//   //   };
+//   user: any;
+// };
+// type sessionProps = {
+//   session: any;
+//   token: any;
+// };
 
 export const authConfig = {
   pages: {
@@ -24,7 +24,8 @@ export const authConfig = {
   },
   providers: [],
   callbacks: {
-    async jwt({ token, user }: jwtProps) {
+    //@ts-ignore
+    async jwt({ token, user }) {
       // console.log("user", user);
       // const { isAdmin, email, ...otherDetails } = user?._doc;
       // console.log(isAdmin, email);
@@ -36,7 +37,8 @@ export const authConfig = {
       }
       return token;
     },
-    async session({ session, token }: sessionProps) {
+    //@ts-ignore
+    async session({ session, token }) {
       if (token) {
         session.user.id = token.id;
         session.user.isAdmin = token.isAdmin;
@@ -45,7 +47,8 @@ export const authConfig = {
       }
       return session;
     },
-    authorized({ auth, request }: authConfigProps) {
+    //@ts-ignore
+    authorized({ auth, request }) {
       // here the "return false" does is that for any page that is to be opened it makes the authorized() returns false
       // this makes callback to the "pages" in the above
       //   return false;
