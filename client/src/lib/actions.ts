@@ -146,9 +146,9 @@ export const register = async (previousState: any, formData: any) => {
     console.log("saved to db");
 
     return { success: true };
-  } catch (err) {
+  } catch (err: any) {
     console.log(err);
-    return { error: "Something went wrong!" };
+    return { error: err.message };
   }
 };
 
